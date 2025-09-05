@@ -1,17 +1,17 @@
 # Description
 
-Allows to auto-generate page objects from Angular templates.
-Uses special HTML attributes to create named bindings for page objects.
-By default the attribute is prefixed by '_'.
-Options may be passed as a value to the attribute to denote usage.
-Currently available options are 'text', 'text-input', 'text-area', 'button', 'checkbox', 'radio-button', 'dropdown', 'select', 'class', 'class={class name}' and 'list'.
-The generator will try to auto detect the type from the html element (e.g. `<input type='checkbox'>` will automatically be resolved as CheckboxObject).
-Attribute names ending with '_list' will treated as list of items.
-Imports and custom code is preserved by default. 
-Custom code needs to be separated by a single line comment.
-If you are using Puppeteer you can use package `npm i puppeteer-page-objects` for the base classes. 
-Otherwise you need to implement base classes for PageObject, ObjectList, TextObject, ButtonObject, CheckboxObject, RadioButtonObject, DropdownObject, TextInputObject and TextAreaObject.
-For more information, please check the test cases inside the test folder or example todo-list application with e2e tests.
+Allows to auto-generate page objects from Angular templates.<br>
+Uses special HTML attributes to create named bindings for page objects.<br>
+By default the attribute is prefixed by '_'.<br>
+Options may be passed as a value to the attribute to denote usage.<br>
+Currently available options are 'text', 'text-input', 'text-area', 'button', 'checkbox', 'radio-button', 'dropdown', 'select', 'class', 'class={class name}' and 'list'.<br>
+The generator will try to auto detect the type from the html element (e.g. `<input type='checkbox'>` will automatically be resolved as CheckboxObject).<br>
+Attribute names ending with '_list' will treated as list of items.<br>
+Imports and custom code is preserved by default.<br>
+Custom code needs to be separated by a single line comment.<br>
+If you are using Puppeteer you can use package `npm i puppeteer-page-objects` for the base classes.<br>
+Otherwise you need to implement base classes for PageObject, ObjectList, TextObject, ButtonObject, CheckboxObject, RadioButtonObject, DropdownObject, TextInputObject and TextAreaObject.<br>
+For more information, please check the test cases inside the test folder or example todo-list application with e2e tests.<br>
 
 ## Installation
 
