@@ -1,0 +1,54 @@
+@use "font/font-awesome-icons.scss";
+
+$panel-border: black;
+$items-text: rgba(#000000,0.8);
+$button-text: rgba(#000000,0.8);
+$button-hover-text: rgba(#000000,1);
+$button-active-border: rgba(#000000,0.3);
+
+:host {
+  display: flex;
+  flex-direction: row;
+  .footer {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid $panel-border;
+    padding: 0px 5px;
+    .left-side {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px 5px;
+      .items-left {
+        color: $items-text;
+        font-size: 14px;
+      }
+    }
+    .right-side {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      button {
+        color: $button-text;
+        background-color: transparent;
+        border: none;
+        padding: 2px 5px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all 0.5s;
+        &:hover {
+          color: $button-hover-text;
+        }
+        &.active {
+          border-radius: 4px;
+          border: 1px solid $button-active-border;
+        }
+      }
+      &>*:not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+  }
+}

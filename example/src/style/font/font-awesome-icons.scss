@@ -1,0 +1,43 @@
+﻿@use "./font-awesome.scss";
+@use "./font-awesome-constants.scss" as const;
+
+.fa-pencil {
+  padding-bottom: 1px;
+  &:before {
+    @extend .font-awesome;
+    content: const.$fa-var-pencil;
+  }
+}
+
+.fa-close {
+  padding-bottom: 2px;
+  &:before {
+    @extend .font-awesome;
+    content: const.$fa-var-close;
+  }
+}
+
+.fa-check:before {
+  @extend .font-awesome;
+  content: const.$fa-var-check;
+}
+
+.fa-plus:before {
+  @extend .font-awesome;
+  content: const.$fa-var-plus;
+}
+
+.fa-ok:before{
+  @extend .font-awesome;
+  content: const.$fa-var-check;
+}
+
+.fa-remove:before{
+  @extend .font-awesome;
+  content: const.$fa-var-close;
+}
+
+.fa-chevron-down:before{
+  @extend .font-awesome;
+  content: const.$fa-var-chevron-down;
+}

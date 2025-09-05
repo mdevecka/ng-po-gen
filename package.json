@@ -1,0 +1,51 @@
+{
+  "name": "ng-po-gen",
+  "type": "module",
+  "version": "1.0.0",
+  "author": "Marian Devecka",
+  "license": "MIT",
+  "description": "Allows to auto-generate page objects from Angular templates.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdevecka/ng-po-gen"
+  },
+  "keywords": [
+    "typescript",
+    "angular",
+    "testing",
+    "page objects"
+  ],
+  "scripts": {
+    "start": "tsc && node ./dist/lib/main.js",
+    "test": "tsc -p tsconfig.spec.json && node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "build": "tsc && node copy-files.mjs",
+    "build-pack": "tsc && node copy-files.mjs && cd dist && npm pack && cd ..",
+    "build-publish": "tsc && node copy-files.mjs && cd dist && npm publish && cd ..",
+    "format": "npm run format-app && npm run format-test",
+    "format-app": "tsfmt -r --useTsconfig tsconfig.json",
+    "format-test": "tsfmt -r --useTsconfig tsconfig.spec.json",
+    "test-gen": "npm run start -- ./example/src/app --output-dir ./example/e2e/tests/page-objects"
+  },
+  "dependencies": {
+    "angular-html-parser": "^9.2.0",
+    "command-line-args": "^6.0.1",
+    "command-line-usage": "^7.0.3",
+    "html-tags": "^5.0.0",
+    "picocolors": "^1.1.1",
+    "typescript-parser": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/command-line-args": "^5.2.3",
+    "@types/command-line-usage": "^5.0.4",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "eslint": "^9.34.0",
+    "jest": "^30.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "typescript-formatter": "^7.2.2"
+  }
+}

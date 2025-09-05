@@ -1,0 +1,19 @@
+<div class="todo-list">
+  <header class="header" _header='class'></header>
+  <main class="items">
+    @if(!loading()){
+      <li class="item-wrapper">
+        @for(item of items();track item.id){
+          <todo-item class="item" [text]="item.text" [completed]="item.completed" 
+                     (textChange)="onTextChanged(item,$event)" (completedChange)="onCompletedChanged(item,$event)" 
+                     (delete)="onItemDelete(item)" _item_list></todo-item>
+        }
+      </li>
+    } @else {
+      <div class="loading" _loading_text>
+        LOADING...
+      </div>
+    }
+  </main>
+  <footer class="footer" _footer='class'></footer>
+</div>

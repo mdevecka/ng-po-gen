@@ -1,0 +1,10 @@
+﻿@use "font-awesome-constants.scss";
+
+@mixin font-awesome-init {
+  @font-face { font-family: font-awesome; src: url('/font/fontawesome-webfont.ttf'); } 
+}
+
+.font-awesome {
+  font-family: font-awesome;
+  font-size: 17px;
+}

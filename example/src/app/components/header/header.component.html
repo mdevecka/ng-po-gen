@@ -1,0 +1,8 @@
+<div class="header">
+  <div class="toggle-select">
+    <button class="fa-chevron-down" (click)="toggleComplete()" _toggle_complete_button></button>
+  </div>
+  <div class="new-task">
+    <input #input placeholder="what task is there?" spellcheck="false" [ngModel]="taskName()" (ngModelChange)="setTaskName($event)" _new_task_name>
+  </div>
+</div>

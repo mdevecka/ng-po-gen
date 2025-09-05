@@ -1,0 +1,35 @@
+{
+  "name": "ng-po-gen",
+  "version": "1.0.0",
+  "author": "Marian Devecka",
+  "license": "MIT",
+  "description": "Allows to auto-generate page objects from Angular templates.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdevecka/ng-po-gen"
+  },
+  "keywords": [
+    "typescript",
+    "angular",
+    "testing",
+    "page objects"
+  ],
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "bin": {
+    "ng-po-gen": "./bin/ng-po-gen"
+  },
+  "dependencies": {
+    "angular-html-parser": "^9.2.0",
+    "command-line-args": "^6.0.1",
+    "command-line-usage": "^7.0.3",
+    "html-tags": "^5.0.0",
+    "picocolors": "^1.1.1",
+    "typescript-parser": "^2.6.1"
+  },
+  "sideEffects": false,
+  "files": [
+    "**/*.js",
+    "**/*.d.ts"
+  ]
+}

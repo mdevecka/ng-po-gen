@@ -1,0 +1,20 @@
+<div class="item">
+  <div class="status">
+    <button class="circle" [class.fa-ok]="completed()" (click)="toggleComplete()" _status_button></button>
+  </div>
+  <div class="task">
+    <div class="text-wrapper">
+      <div class="text">
+        <input #input class="task-input" [class.completed]="completed()"
+               [(ngModel)]="text" [disabled]="!editing()" (blur)="onInputBlur()" spellcheck="false" _name_input>
+        <div class="task-name" [class.strike]="completed()" [class.init-frame]="initFrame()" _name_text>{{ text() }}</div>
+      </div>
+    </div>
+    <button class="edit" (click)="onEdit()" _edit_button>
+      <div class="fa-pencil"></div>
+    </button>
+    <button class="delete" (click)="onDelete()" _delete_button>
+      <div class="fa-remove"></div>
+    </button>
+  </div>
+</div>

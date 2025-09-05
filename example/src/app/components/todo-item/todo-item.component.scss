@@ -1,0 +1,133 @@
+@use "font/font-awesome-icons.scss";
+
+$panel-border: black;
+$circle-border: rgba(black,0.3);
+$circle-check: #00A000;
+$task-text: #000000;
+$task-completed-text: rgba(#000000,0.5);
+$task-completed-strike: rgba(#000000,0.5);
+$icon-edit: rgba(#808080,0.5);
+$icon-edit-hover: #808080;
+$icon-delete: rgba(#A00000,0.5);
+$icon-delete-hover: #A00000;
+
+:host {
+  display: flex;
+  flex-direction: row;
+  .item {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    .status {
+      flex: 0 0 40px;
+      border-right: 1px solid $panel-border;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .circle {
+        border: 1px solid $circle-border;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $circle-check;
+        cursor: pointer;
+      }
+    }
+    .task {
+      flex: 1 0 0;
+      display: flex;
+      flex-direction: row;
+      padding-right: 4px;
+      .text-wrapper {
+        flex: 1 0 0;
+        display: flex;
+        flex-direction: row;
+        .text {
+          flex: 1 0 0;
+          display: flex;
+          flex-direction: row;
+          position: relative;
+          .task-input {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            border: none;
+            color: $task-text;
+            font-family: Arial;
+            font-size: 16px;
+            outline: none;
+            padding: 0px 5px;
+            &:disabled {
+              background-color: white;
+            }
+            &.completed {
+              color: $task-completed-text;
+            }
+          }
+          .task-name {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0px 5px;
+            pointer-events: none;
+            color: transparent;
+            @keyframes strike {
+              0%   { width : 0; }
+              100% { width: 100%; }
+            }
+            &.strike::after {
+              content: ' ';
+              position: absolute;
+              top: 50%;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background: $task-completed-strike;
+              animation-name: strike;
+              animation-duration: 0.5s;
+              animation-timing-function: linear;
+              animation-iteration-count: 1;
+              animation-fill-mode: forwards;
+            }
+            &.strike.init-frame::after {
+              animation-duration: 0s;
+            }
+          }
+        }
+      }
+      .edit, .delete {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        cursor: pointer;
+        color: transparent;
+        background: none;
+        border: none;
+      }
+      &:hover {
+        .edit {
+          color: $icon-edit;
+          &:hover {
+            color: $icon-edit-hover;
+          }
+        }
+        .delete {
+          color: $icon-delete;
+          &:hover {
+            color: $icon-delete-hover;
+          }
+        }
+      }
+    }
+  }
+}

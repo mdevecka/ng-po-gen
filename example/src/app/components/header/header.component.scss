@@ -1,0 +1,44 @@
+@use "font/font-awesome-icons.scss";
+
+$panel-border: black;
+$button-text: rgba(black,0.5);
+$button-hover-text: rgba(black,0.8);
+
+:host {
+  display: flex;
+  flex-direction: row;
+  .header {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    .toggle-select {
+      flex: 0 0 40px;
+      border-right: 1px solid $panel-border;
+      border-bottom: 1px solid $panel-border;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        border: none;
+        background-color: transparent;
+        color: $button-text;
+        cursor: pointer;
+        &:hover {
+          color: $button-hover-text;
+        }
+      }
+    }
+    .new-task {
+      flex: 1 0 0;
+      border-bottom: 1px solid $panel-border;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      input {
+        font-size: 16px;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}

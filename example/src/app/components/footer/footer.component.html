@@ -1,0 +1,10 @@
+<div class="footer">
+  <div class="left-side">
+    <div class="items-left" *ngIf="hasItems()" _items_left>{{ incompleteCount() }} {{ plural() ? 'items' : 'item' }} left</div>
+  </div>
+  <div class="right-side">
+    @for(button of buttons;track button){
+      <button [class.active]="button.filter === filter()" (click)="onFilterChange(button.filter)" _filter_button_list>{{ button.text }}</button>
+    }
+  </div>
+</div>
